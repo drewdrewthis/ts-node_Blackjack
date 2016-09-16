@@ -13,7 +13,7 @@ var Blackjack = (function () {
         };
         this.draw = function () {
             this.hand.cards.push(this.deck.cards.pop());
-            if (this.gameOver()) {
+            if (this.isGameOver()) {
                 console.log("Game over! Total: " + this.hand.total);
             }
             else {
@@ -21,7 +21,7 @@ var Blackjack = (function () {
                 console.log("Current total: " + this.hand.total);
             }
         };
-        this.gameOver = function () {
+        this.isGameOver = function () {
             this.totalHand();
             if (this.hand.total > 21) {
                 return true;

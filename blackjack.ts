@@ -24,7 +24,7 @@ export class Blackjack {
 
 	draw = function() {
 		this.hand.cards.push(this.deck.cards.pop());
-		if (this.gameOver()) {
+		if (this.isGameOver()) {
 			console.log("Game over! Total: " + this.hand.total);
 		}
 		else {
@@ -33,7 +33,7 @@ export class Blackjack {
 		}
 	}
 
-	gameOver = function() {
+	isGameOver = function() {
 		this.totalHand();
 		if (this.hand.total > 21) {
 			return true;
